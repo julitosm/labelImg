@@ -14,7 +14,6 @@ Can be used to label images from scratch or to check existing labels. Writes lab
 docker run -it \
 --user $(id -u) \
 -e DISPLAY=unix$DISPLAY \
---workdir=$(pwd) \
 --volume="/home/$USER:/home/$USER" \
 --volume="/etc/group:/etc/group:ro" \
 --volume="/etc/passwd:/etc/passwd:ro" \

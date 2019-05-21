@@ -48,4 +48,4 @@ COPY . /app
 
 CMD ["make", "qt5py3"]
 
-ENTRYPOINT [ "python3", "labelImg.py" ]
+ENTRYPOINT [ "python3", "./app/labelImg.py" ]
