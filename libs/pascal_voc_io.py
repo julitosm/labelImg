@@ -29,7 +29,7 @@ class PascalVocWriter:
         """
         rough_string = ElementTree.tostring(elem, 'utf8')
         root = etree.fromstring(rough_string)
-        return etree.tostring(root, pretty_print=True, encoding=ENCODE_METHOD).replace("  ".encode(), "\t".encode())
+        return etree.tostring(root, pretty_print=True, encoding=ENCODE_METHOD).replace("  ".encode(), "   ".encode())
         # minidom does not support UTF-8
         '''reparsed = minidom.parseString(rough_string)
         return reparsed.toprettyxml(indent="\t", encoding=ENCODE_METHOD)'''
@@ -53,11 +53,11 @@ class PascalVocWriter:
 
         filename = SubElement(top, 'filename')
         filename.text = self.filename
-
+        '''
         if self.localImgPath is not None:
             localImgPath = SubElement(top, 'path')
             localImgPath.text = self.localImgPath
-
+        '''
         source = SubElement(top, 'source')
         database = SubElement(source, 'database')
         database.text = self.databaseSrc
